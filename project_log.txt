@@ -1,0 +1,330 @@
+================================================================
+  BEAUTY TRENDS WORLD MONITOR - PROJECT LOG
+  Generated: Sat  4 Apr 2026 08:06:21 IST
+================================================================
+
+===========================================
+  1. PROJECT STRUCTURE & FILE SIZES
+===========================================
+
+927B     ./.env.example
+258B     ./.gitignore
+0B       ./backend/app/__init__.py
+939B     ./backend/app/config.py
+0B       ./backend/app/db/__init__.py
+387B     ./backend/app/db/supabase_client.py
+0B       ./backend/app/ingestion/__init__.py
+0B       ./backend/app/ingestion/collectors/__init__.py
+3.0K     ./backend/app/ingestion/collectors/base.py
+2.9K     ./backend/app/ingestion/collectors/ecommerce.py
+3.3K     ./backend/app/ingestion/collectors/google_trends.py
+5.6K     ./backend/app/ingestion/collectors/news.py
+3.5K     ./backend/app/ingestion/collectors/reddit.py
+2.8K     ./backend/app/ingestion/collectors/tiktok.py
+2.6K     ./backend/app/ingestion/collectors/twitter.py
+2.9K     ./backend/app/ingestion/normalizer.py
+4.8K     ./backend/app/ingestion/orchestrator.py
+2.3K     ./backend/app/ingestion/sentiment.py
+1.5K     ./backend/app/main.py
+0B       ./backend/app/models/__init__.py
+2.0K     ./backend/app/models/schemas.py
+0B       ./backend/app/routers/__init__.py
+736B     ./backend/app/routers/ai.py
+3.0K     ./backend/app/routers/analytics.py
+869B     ./backend/app/routers/feed.py
+434B     ./backend/app/routers/ingest.py
+1.5K     ./backend/app/routers/products.py
+767B     ./backend/app/routers/trends.py
+0B       ./backend/app/services/__init__.py
+6.3K     ./backend/app/services/ai_service.py
+864B     ./backend/app/services/cache_service.py
+5.0K     ./backend/app/services/trend_service.py
+54B      ./backend/Procfile
+193B     ./backend/requirements.txt
+480B     ./frontend/.gitignore
+465B     ./frontend/eslint.config.mjs
+247B     ./frontend/next-env.d.ts
+133B     ./frontend/next.config.ts
+250K     ./frontend/package-lock.json
+977B     ./frontend/package.json
+94B      ./frontend/postcss.config.mjs
+105K     ./frontend/public/geo/world-110m.json
+769B     ./frontend/src/app/api/chat/route.ts
+4.9K     ./frontend/src/app/dashboard/analytics/page.tsx
+3.7K     ./frontend/src/app/dashboard/command/page.tsx
+4.6K     ./frontend/src/app/dashboard/feed/page.tsx
+463B     ./frontend/src/app/dashboard/layout.tsx
+6.6K     ./frontend/src/app/dashboard/page.tsx
+5.4K     ./frontend/src/app/dashboard/products/page.tsx
+1.3K     ./frontend/src/app/globals.css
+776B     ./frontend/src/app/layout.tsx
+106B     ./frontend/src/app/page.tsx
+1.8K     ./frontend/src/components/charts/CategoryBreakdown.tsx
+1.8K     ./frontend/src/components/charts/SentimentGauge.tsx
+1.6K     ./frontend/src/components/charts/SparklineCard.tsx
+1.9K     ./frontend/src/components/charts/TrendLineChart.tsx
+2.1K     ./frontend/src/components/command/AnomalyAlert.tsx
+5.2K     ./frontend/src/components/command/ChatInterface.tsx
+2.2K     ./frontend/src/components/command/TrendReport.tsx
+2.9K     ./frontend/src/components/feed/FeedCard.tsx
+2.3K     ./frontend/src/components/feed/SocialFeed.tsx
+1.7K     ./frontend/src/components/layout/MetricCard.tsx
+2.4K     ./frontend/src/components/layout/Sidebar.tsx
+2.7K     ./frontend/src/components/layout/Topbar.tsx
+7.5K     ./frontend/src/components/map/GlobalTrendMap.tsx
+5.9K     ./frontend/src/components/products/ProductRankingTable.tsx
+1.1K     ./frontend/src/hooks/useRealtimeFeed.ts
+1.7K     ./frontend/src/hooks/useRealtimeTrends.ts
+951B     ./frontend/src/hooks/useTrendQuery.ts
+2.5K     ./frontend/src/lib/api.ts
+2.1K     ./frontend/src/lib/constants.ts
+460B     ./frontend/src/lib/supabase/client.ts
+248B     ./frontend/src/types/ai-insight.ts
+347B     ./frontend/src/types/product.ts
+292B     ./frontend/src/types/social-post.ts
+722B     ./frontend/src/types/trend.ts
+670B     ./frontend/tsconfig.json
+342B     ./project_log.txt
+4.1K     ./supabase_schema.sql
+
+Total project source files (excl node_modules, .next):
+  File count: 79
+  Total size: 506.9 KB
+
+===========================================
+  2. DIRECTORY SIZES
+===========================================
+
+192K	./frontend/src/
+128K	./frontend/public/
+552M	./frontend/node_modules/
+181M	./frontend/.next/
+140K	./backend/
+4.0K	./.gitignore
+4.0K	./.env.example
+8.0K	./supabase_schema.sql
+
+Total project size (everything):
+734M	.
+
+===========================================
+  3. NPM PACKAGES INSTALLED (Frontend)
+===========================================
+
+frontend@0.1.0 /Users/athithyabalasubramani/Desktop/Claude_Workshop/World_Monitor/frontend
+├── @anthropic-ai/sdk@0.82.0
+├── @emnapi/core@1.9.2 extraneous
+├── @emnapi/runtime@1.9.2 extraneous
+├── @emnapi/wasi-threads@1.2.1 extraneous
+├── @napi-rs/wasm-runtime@0.2.12 extraneous
+├── @supabase/ssr@0.10.0
+├── @supabase/supabase-js@2.101.1
+├── @tailwindcss/postcss@4.2.2
+├── @tybys/wasm-util@0.10.1 extraneous
+├── @types/d3-geo@3.1.0
+├── @types/d3-scale-chromatic@3.1.0
+├── @types/node@20.19.39
+├── @types/react-dom@19.2.3
+├── @types/react@19.2.14
+├── @types/topojson-client@3.1.5
+├── clsx@2.1.1
+├── d3-geo@3.1.1
+├── d3-scale-chromatic@3.1.0
+├── eslint-config-next@16.2.2
+├── eslint@9.39.4
+├── lucide-react@1.7.0
+├── next@16.2.2
+├── react-dom@19.2.4
+├── react@19.2.4
+├── recharts@3.8.1
+├── swr@2.4.1
+├── tailwind-merge@3.5.0
+├── tailwindcss@4.2.2
+├── topojson-client@3.1.0
+└── typescript@5.9.3
+
+
+NPM package sizes (node_modules top-level):
+169M	node_modules/next/
+126M	node_modules/@next/
+ 38M	node_modules/lucide-react/
+ 23M	node_modules/typescript/
+ 16M	node_modules/@img/
+ 12M	node_modules/es-toolkit/
+ 11M	node_modules/@babel/
+ 10M	node_modules/es-abstract/
+8.5M	node_modules/recharts/
+8.2M	node_modules/@typescript-eslint/
+8.2M	node_modules/@reduxjs/
+8.1M	node_modules/lightningcss-darwin-arm64/
+8.0M	node_modules/@supabase/
+7.5M	node_modules/@napi-rs/
+7.1M	node_modules/react-dom/
+6.0M	node_modules/zod/
+5.1M	node_modules/@anthropic-ai/
+4.1M	node_modules/eslint-plugin-react-hooks/
+4.1M	node_modules/caniuse-lite/
+3.8M	node_modules/eslint/
+3.7M	node_modules/@types/
+3.1M	node_modules/@tailwindcss/
+2.9M	node_modules/axe-core/
+2.6M	node_modules/@emnapi/
+2.2M	node_modules/eslint-plugin-react/
+1.7M	node_modules/jiti/
+1.7M	node_modules/eslint-plugin-import/
+1.7M	node_modules/@unrs/
+1.7M	node_modules/@swc/
+1.5M	node_modules/language-subtag-registry/
+
+===========================================
+  4. PYTHON PACKAGES (Backend)
+===========================================
+
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic-settings==2.5.2
+httpx==0.27.2
+supabase==2.9.1
+upstash-redis==1.1.0
+anthropic==0.39.0
+pytrends==4.9.2
+feedparser==6.0.11
+python-dotenv==1.0.1
+
+===========================================
+  5. STATIC ASSETS
+===========================================
+
+total 216
+-rw-r--r--  1 athithyabalasubramani  staff   105K  4 Apr 07:22 world-110m.json
+
+===========================================
+  6. BUILD OUTPUT (.next)
+===========================================
+
+181M	/Users/athithyabalasubramani/Desktop/Claude_Workshop/World_Monitor/frontend/.next/
+1.9M	/Users/athithyabalasubramani/Desktop/Claude_Workshop/World_Monitor/frontend/.next/static/
+ 13M	/Users/athithyabalasubramani/Desktop/Claude_Workshop/World_Monitor/frontend/.next/server/
+
+===========================================
+  7. FILE TREE (Source Only)
+===========================================
+
+./.env.example
+./.gitignore
+./backend/app/__init__.py
+./backend/app/config.py
+./backend/app/db/__init__.py
+./backend/app/db/supabase_client.py
+./backend/app/ingestion/__init__.py
+./backend/app/ingestion/collectors/__init__.py
+./backend/app/ingestion/collectors/base.py
+./backend/app/ingestion/collectors/ecommerce.py
+./backend/app/ingestion/collectors/google_trends.py
+./backend/app/ingestion/collectors/news.py
+./backend/app/ingestion/collectors/reddit.py
+./backend/app/ingestion/collectors/tiktok.py
+./backend/app/ingestion/collectors/twitter.py
+./backend/app/ingestion/normalizer.py
+./backend/app/ingestion/orchestrator.py
+./backend/app/ingestion/sentiment.py
+./backend/app/main.py
+./backend/app/models/__init__.py
+./backend/app/models/schemas.py
+./backend/app/routers/__init__.py
+./backend/app/routers/ai.py
+./backend/app/routers/analytics.py
+./backend/app/routers/feed.py
+./backend/app/routers/ingest.py
+./backend/app/routers/products.py
+./backend/app/routers/trends.py
+./backend/app/services/__init__.py
+./backend/app/services/ai_service.py
+./backend/app/services/cache_service.py
+./backend/app/services/trend_service.py
+./backend/Procfile
+./backend/requirements.txt
+./frontend/.gitignore
+./frontend/eslint.config.mjs
+./frontend/next-env.d.ts
+./frontend/next.config.ts
+./frontend/postcss.config.mjs
+./frontend/src/app/api/chat/route.ts
+./frontend/src/app/dashboard/analytics/page.tsx
+./frontend/src/app/dashboard/command/page.tsx
+./frontend/src/app/dashboard/feed/page.tsx
+./frontend/src/app/dashboard/layout.tsx
+./frontend/src/app/dashboard/page.tsx
+./frontend/src/app/dashboard/products/page.tsx
+./frontend/src/app/globals.css
+./frontend/src/app/layout.tsx
+./frontend/src/app/page.tsx
+./frontend/src/components/charts/CategoryBreakdown.tsx
+./frontend/src/components/charts/SentimentGauge.tsx
+./frontend/src/components/charts/SparklineCard.tsx
+./frontend/src/components/charts/TrendLineChart.tsx
+./frontend/src/components/command/AnomalyAlert.tsx
+./frontend/src/components/command/ChatInterface.tsx
+./frontend/src/components/command/TrendReport.tsx
+./frontend/src/components/feed/FeedCard.tsx
+./frontend/src/components/feed/SocialFeed.tsx
+./frontend/src/components/layout/MetricCard.tsx
+./frontend/src/components/layout/Sidebar.tsx
+./frontend/src/components/layout/Topbar.tsx
+./frontend/src/components/map/GlobalTrendMap.tsx
+./frontend/src/components/products/ProductRankingTable.tsx
+./frontend/src/hooks/useRealtimeFeed.ts
+./frontend/src/hooks/useRealtimeTrends.ts
+./frontend/src/hooks/useTrendQuery.ts
+./frontend/src/lib/api.ts
+./frontend/src/lib/constants.ts
+./frontend/src/lib/supabase/client.ts
+./frontend/src/types/ai-insight.ts
+./frontend/src/types/product.ts
+./frontend/src/types/social-post.ts
+./frontend/src/types/trend.ts
+./supabase_schema.sql
+
+===========================================
+  8. ENVIRONMENT VARIABLES REQUIRED
+===========================================
+
+# Supabase
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_KEY=your-service-role-key
+
+# Upstash Redis
+UPSTASH_REDIS_URL=https://your-redis.upstash.io
+UPSTASH_REDIS_TOKEN=your-redis-token
+
+# Upstash QStash
+QSTASH_TOKEN=your-qstash-token
+QSTASH_CURRENT_SIGNING_KEY=your-signing-key
+QSTASH_NEXT_SIGNING_KEY=your-next-signing-key
+
+# Anthropic (Claude API)
+ANTHROPIC_API_KEY=your-anthropic-key
+
+# Reddit API
+REDDIT_CLIENT_ID=your-reddit-client-id
+REDDIT_CLIENT_SECRET=your-reddit-client-secret
+REDDIT_USER_AGENT=BeautyTrendsMonitor/1.0
+
+# Twitter/X API
+TWITTER_BEARER_TOKEN=your-twitter-bearer-token
+
+# RapidAPI (TikTok, E-commerce)
+RAPIDAPI_KEY=your-rapidapi-key
+
+# NewsAPI
+NEWSAPI_KEY=your-newsapi-key
+
+# Backend URL (for frontend)
+NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+================================================================
+  END OF LOG
+================================================================
